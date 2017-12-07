@@ -1,0 +1,13 @@
+Demonstrate the content types and character sets that Thymeleaf attaches
+to requests.
+
+In particular post 3.0.6 release the content negotiation seems to be
+guided by the file extension in the URL and ignores the type of any
+templates that are used to generate the output.
+
+The main use case that I am interested in is for catching 404 NotFound
+requests where a prefix of the path does not correspond to a valid
+item in the database. When this happens for a path that would
+normally generate JSON, XML or similar output the content type of the
+error page is listed as JSON, XML etc and not as the proper HTML
+template that I would like to generate.
